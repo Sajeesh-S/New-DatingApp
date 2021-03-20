@@ -24,8 +24,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css"             
+              "./node_modules/bootswatch/dist/united/bootstrap.min.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",             
+              "./node_modules/font-awesome/css/font-awesome.css",
+              "./node_modules/ngx-toastr/toastr.css" , 
+              "src/styles.css"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
@@ -95,7 +98,6 @@
             ],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "./node_modules/ngx-bootsrtap/datepicker/bs-datepicker.css",
               "src/styles.css"
             ],
             "scripts": [
