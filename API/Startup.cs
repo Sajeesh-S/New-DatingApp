@@ -34,22 +34,8 @@ namespace API
         {
 
             services.AddApplicationServices(_config);
-            services.AddCors(options =>
-            {
-                options.AddDefaultPolicy(builder =>
-                {
-                    builder.WithOrigins("https://localhost:4200");
-                });
-            });
             services.AddControllers();
-
-            services
-                .AddSwaggerGen(c =>
-                {
-                    c
-                        .SwaggerDoc("v1",
-                        new OpenApiInfo { Title = "API", Version = "v1" });
-                });
+            services.AddCors();
             services.AddIdentityServices(_config);
         }
 
@@ -59,21 +45,13 @@ namespace API
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app
-                    .UseSwaggerUI(c =>
-                        c
-                            .SwaggerEndpoint("/swagger/v1/swagger.json",
-                            "API v1"));
             }
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
-            app.UseCors();
+            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200"));
             app.UseAuthentication();
             app.UseAuthorization();
-
             app
                 .UseEndpoints(endpoints =>
                 {
