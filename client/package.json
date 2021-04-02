@@ -21,6 +21,7 @@
     "@angular/platform-browser": "~11.2.4",
     "@angular/platform-browser-dynamic": "~11.2.4",
     "@angular/router": "~11.2.4",
+    "@kolkov/ngx-gallery": "^1.2.3",
     "@schematics/angular": "^11.2.4",
     "bootstrap": "^4.6.0",
     "bootswatch": "^4.6.0",
