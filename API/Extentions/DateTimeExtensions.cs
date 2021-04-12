@@ -6,9 +6,9 @@ namespace API.Extentions
     {
         public static int CalculateAge(this DateTime dob)
         {
-            var age = DateTime.Today.Year - dob.Year;
-            if (dob.AddYears(age) > DateTime.Today)
-                age--;
+            var today = DateTime.Today;
+            var age = today.Year - dob.Year;
+             if (dob.Date > today.AddYears(-age)) age--;
             return age;  
         }
     }
